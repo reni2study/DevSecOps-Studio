@@ -191,8 +191,8 @@ pip install ansible
     ```bash
     $ ansible-galaxy install -r requirements.yml
     ```
-
-3. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
+3. Ensure the latest verion of Vagrant is installed on your machine 
+4. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
 
 	```bash
 	vagrant up
