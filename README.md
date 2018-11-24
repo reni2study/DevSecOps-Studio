@@ -138,7 +138,7 @@ sudo apt install virtualbox
 
 ``` bash
 # Looks like vagrant doesn't play nicely if you install with apt
-VAGRANT_VERSION=2.1.2
+VAGRANT_VERSION=2.2.1
 wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
 
