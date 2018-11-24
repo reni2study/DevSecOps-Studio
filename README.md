@@ -137,7 +137,12 @@ sudo apt install virtualbox
 [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ``` bash
-sudo apt-get install vagrant python2 python2-pip
+# Looks like vagrant doesn't play nicely if you install with apt
+VAGRANT_VERSION=2.2.1
+wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
+sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
+
+sudo apt-get install python2 python2-pip
 ```
 [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
