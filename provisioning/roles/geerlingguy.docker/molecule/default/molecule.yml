@@ -5,12 +5,11 @@ driver:
   name: docker
 lint:
   name: yamllint
-  enabled: False 
   options:
-    config-file: resources/.yamllint
+    config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: instance
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1604}-ansible:latest"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -18,19 +17,12 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
-  playbooks:
-    create: create.yml
-    destroy: destroy.yml
-  env:
-    ANSIBLE_ROLES_PATH: ../../roles/
   lint:
     name: ansible-lint
-    enabled: True
-    options:
-      exclude:
-        - roles/rvm_io.ruby/tasks/rvm.yml
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
 scenario:
-  name: prod
+  name: default
 verifier:
   name: testinfra
   lint:
