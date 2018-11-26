@@ -1,4 +1,4 @@
-Welcome to DevSecOps Studio Project!
+Welcome to DevSecOps Studio Project
 ===================
 
 [![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
@@ -119,10 +119,10 @@ brew install ansible
 
 ### Linux
 
-Install with curl(run as root)
+Curl Installlation(require root privileges to install tools)
 
 ``` bash
-curl -O https://raw.githubusercontent.com/raghuone/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+curl -O https://raw.githubusercontent.com/teacheraio/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
 ```
 
 or 
