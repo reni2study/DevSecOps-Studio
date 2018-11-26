@@ -9,12 +9,19 @@ before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
 env:
-  - test=devsecops
-  - test=jenkins
-  - test=gitlab
-  - test=gitlab-runner
-  - test=elk
-  - test=prod
+  # - MOLECULE_DISTRO=ubuntu1804 test=devsecops
+  # - MOLECULE_DISTRO=ubuntu1804 test=jenkins
+  # - MOLECULE_DISTRO=ubuntu1804 test=gitlab
+  # - MOLECULE_DISTRO=ubuntu1804 test=gitlab-runner
+  # - MOLECULE_DISTRO=ubuntu1804 test=elk
+  # - MOLECULE_DISTRO=ubuntu1804 test=prod
+
+  - MOLECULE_DISTRO=ubuntu1604 test=devsecops
+  - MOLECULE_DISTRO=ubuntu1604 test=jenkins
+  - MOLECULE_DISTRO=ubuntu1604 test=gitlab
+  - MOLECULE_DISTRO=ubuntu1604 test=gitlab-runner
+  - MOLECULE_DISTRO=ubuntu1604 test=elk
+  - MOLECULE_DISTRO=ubuntu1604 test=prod
 
 services:
   - docker
@@ -30,9 +37,18 @@ before_install:
 install:
   - pip install docker molecule==2.19 # Molecule Installs Ansible
 
+after_install:
+  - ansible --version
+  - molecule --version
+  - docker --version
+  - python --version
+  - pip --version
+
 script:
   - cd provisioning && molecule $DEBUG test -s $test
 
 matrix:
   allow_failures:
-    - env: test=gitlab # Docker has some issue with gitlab reconfigure, works fine in VM
+    - env: MOLECULE_DISTRO=ubuntu1804 test=gitlab
+    - env: MOLECULE_DISTRO=ubuntu1604 test=gitlab
+    - env: MOLECULE_DISTRO=debian9 test=gitlab
