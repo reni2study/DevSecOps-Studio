@@ -65,4 +65,5 @@
     - python
     - cli-tools
     - geerlingguy.ansible-role-packer
+    - secfigo.terraform
     # - selenium
