@@ -3,7 +3,7 @@ Welcome to DevSecOps Studio Project
 
 [![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
 
-DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Free Practical DevSecOps Course at https://www.teachera.io/devsecops-course/
+DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Free Practical DevSecOps Course at https://www.practical-devsecops.com/free-practical-devsecops-course/
 
 DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
 
@@ -19,7 +19,7 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 
 > **Note:**
 
-> - We use this repo as companion to our Free [Practical DevSecOps course](https://www.teachera.io/devsecops-course/).
+> - We use this repo as companion to our Free [Practical DevSecOps course](https://www.practical-devsecops.com/free-practical-devsecops-course/).
 
 > - If you wish to join our free course, please click on __Join the course__ in the above link.
 
