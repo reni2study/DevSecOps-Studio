@@ -16,13 +16,6 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 7. Static tools like bandit, brakeman, windbags, gitrob, gitsecrets
 8. Security Monitoring using ELK stack. 
 
-
-> **Note:**
-
-> - We use this repo as companion to our Free [Practical DevSecOps course](https://www.practical-devsecops.com/free-practical-devsecops-course/).
-
-> - If you wish to join our free course, please click on __Join the course__ in the above link.
-
 ## How do I get set up? ###
 
 * [Summary of setup](#summary-of-setup)
