@@ -18,11 +18,10 @@
 - src: geerlingguy.kibana
 - src: geerlingguy.logstash
 
-- src: rvm.ruby
-  version: 2.1.0
+#- src: rvm.ruby
+#  version: 2.1.0
 
 - src: secfigo.terraform
   version: 1.0.1
 
 - src: secfigo.gauntlt
-  version: 1.0.0
