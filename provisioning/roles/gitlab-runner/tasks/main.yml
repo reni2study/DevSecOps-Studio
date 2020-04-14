@@ -26,6 +26,8 @@
 - name: Install GitLab Runner dependencies
   apt:
     name:
+      - git
+      - build-essential
       - debian-archive-keyring
       - apt-transport-https
       - ca-certificates

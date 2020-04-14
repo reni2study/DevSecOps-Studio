@@ -1,7 +1,6 @@
 ---
 
 - name: Install gitlab runner
-  gather_facts: False
   hosts: all
   become: yes
 
@@ -52,10 +51,9 @@
       - name: ansible-lint
         version: 4.2.0
       - name: sslyze
-        version: 3.0.1
 
   roles:
-    - common # need curl for rvm_io.ruby
+    - common
     # - rvm.ruby
     # - secfigo.gauntlt
     - geerlingguy.docker
