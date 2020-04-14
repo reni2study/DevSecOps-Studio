@@ -8,7 +8,7 @@
 
 - name: Copy gitlab server's public key to gitlab-runner
   copy:
-    src: "{{gitlab_runner_coordinator_cert_path}}"
+    src: "{{ gitlab_runner_coordinator_cert_path }}"
     dest: "/usr/local/share/ca-certificates/"
     owner: root
     group: root
