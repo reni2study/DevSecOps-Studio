@@ -1,13 +1,28 @@
 ---
 - src: geerlingguy.pip
+  version: 1.3.0
+
 - src: geerlingguy.ruby
+  version: 2.6.0
+
 - src: geerlingguy.docker
-- src: geerlingguy.ansible-role-packer
-- src: geerlingguy.java
+  version: 2.7.0
+
+- src: geerlingguy.packer
+  version: 1.0.2
+
 - src: geerlingguy.nginx
+  version: 2.7.0 
+
 - src: geerlingguy.elasticsearch
 - src: geerlingguy.kibana
 - src: geerlingguy.logstash
+
 - src: rvm.ruby
+  version: 2.1.0
+
 - src: secfigo.terraform
+  version: 1.0.1
+
 - src: secfigo.gauntlt
+  version: 1.0.0
