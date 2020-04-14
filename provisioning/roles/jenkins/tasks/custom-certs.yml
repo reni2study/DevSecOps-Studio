@@ -21,6 +21,5 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Update cert index
-  command: /usr/sbin/update-ca-certificates
+  notify:
+    - update cert index
