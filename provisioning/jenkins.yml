@@ -54,16 +54,51 @@
       - ansible
       - gitlab-plugin
 
+    # Docker Community Edition
+    docker_edition: 'ce'
+    docker_package: "docker-{{ docker_edition }}"
+    docker_package_state: present
+
+    # Docker compose
+    docker_install_compose: true
+    docker_compose_version: "1.25.4"
+    docker_compose_path: /usr/local/bin/docker-compose
+
+    docker_apt_release_channel: stable
+    docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
+
+    # Packer
+    packer_version: "1.5.5"
+    packer_arch: "amd64"
+    packer_bin_path: /usr/local/bin
+
+    # Terraform
+    terraform_version: "0.12.24"
+    terraform_arch: "amd64"
+    terraform_bin_path: /usr/local/bin
+
+    # Install pip3 version
+    pip_package: python3-pip
+    pip_executable: pip3
+    pip_install_packages:
+      - name: virtualenv 
+      - name: ansible
+        version: 2.9.6
+      - name: ansible-lint
+        version: 4.2.0
+      - name: sslyze
+        version: 3.0.1
+
   roles:
     - common # need curl for rvm_io.ruby
-    - rvm.ruby
-    - secfigo.gauntlt
+    # - rvm.ruby
+    # - secfigo.gauntlt
     - geerlingguy.docker
     - geerlingguy.java
     - geerlingguy.jenkins
     - jenkins # Docker settings for jenkins
     - python
     - cli-tools
-    - geerlingguy.ansible-role-packer
+    - geerlingguy.packer
     - secfigo.terraform
     # - selenium
