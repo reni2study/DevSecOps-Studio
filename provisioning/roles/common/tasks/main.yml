@@ -6,7 +6,7 @@
       - locales
       - apt-transport-https
       - sshpass
-      - apparmor-utils 
+      - apparmor-utils
     state: present
     update_cache: yes
 

@@ -10,7 +10,7 @@ lint:
     config-file: resources/.yamllint
 platforms:
   - name: instance
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1604}-ansible:latest"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
