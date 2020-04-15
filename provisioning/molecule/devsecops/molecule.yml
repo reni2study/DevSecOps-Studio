@@ -28,7 +28,9 @@ provisioner:
     enabled: True
     options:
       exclude:
-        - roles/rvm.ruby/tasks/rvm.yml
+        - roles/geerlingguy.docker/tasks/setup-Debian.yml
+      x: 
+        - 204
 scenario:
   name: devsecops
   test_sequence:
