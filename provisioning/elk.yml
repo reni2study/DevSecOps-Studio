@@ -1,7 +1,6 @@
 ---
 
 - name: Install ELK stack
-  gather_facts: False
   hosts: all
   become: yes
 
