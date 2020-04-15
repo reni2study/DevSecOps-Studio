@@ -8,16 +8,8 @@
     gitlab_runner_registration_token: ''
     gitlab_runner_connect_enable: false
 
-    #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.6.5'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
-
   roles:
     - common
-    - rvm.ruby
-    - secfigo.gauntlt
     - geerlingguy.docker
     - gitlab-runner
     - geerlingguy.packer

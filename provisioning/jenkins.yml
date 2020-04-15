@@ -5,14 +5,8 @@
   become: yes
 
   vars:
-    oracle_java_version: 8
-
-    #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.6.5'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
-
+    java_packages:
+      - java-1.8.0-openjdk
     # host entries won't work in docker
     # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hostl
     add_host_entries: true
@@ -80,8 +74,6 @@
 
   roles:
     - common # need curl for rvm_io.ruby
-    # - rvm.ruby
-    # - secfigo.gauntlt
     - geerlingguy.docker
     - geerlingguy.java
     - geerlingguy.jenkins

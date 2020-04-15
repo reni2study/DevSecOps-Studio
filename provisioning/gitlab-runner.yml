@@ -8,12 +8,6 @@
     gitlab_runner_registration_token: 'CtNi9vq-4yFazTLntDU-'
     gitlab_runner_connect_enable: false
 
-    #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.6.5'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
-
     # host entries won't work in docker
     # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
     add_host_entries: true
@@ -54,8 +48,6 @@
 
   roles:
     - common
-    # - rvm.ruby
-    # - secfigo.gauntlt
     - geerlingguy.docker
     - gitlab-runner
     - geerlingguy.pip

@@ -1,6 +1,6 @@
 ---
 
-- name: Install Docker, Docker Compose, Ansible, Packer and Terraform
+- name: Setup DevSecOps Environment
   hosts: all
   become: yes
 
@@ -36,12 +36,6 @@
     terraform_version: "0.12.24"
     terraform_arch: "amd64"
     terraform_bin_path: /usr/local/bin
-
-    # Inspec
-    ruby_version: 'ruby-2.6.5'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
 
     # Install pip3 version
     pip_package: python3-pip
