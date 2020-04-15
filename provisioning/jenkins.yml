@@ -1,7 +1,6 @@
 ---
 
 - name: Install Jenkins
-  gather_facts: False
   hosts: all
   become: yes
 
@@ -91,4 +90,5 @@
     - cli-tools
     - geerlingguy.packer
     - secfigo.terraform
+    - secfigo.inspec
     # - selenium
