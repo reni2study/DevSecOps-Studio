@@ -1,7 +1,6 @@
 ---
 
 - name: Install Vulnerability Management
-  gather_facts: False
   hosts: all
   become: yes
 
