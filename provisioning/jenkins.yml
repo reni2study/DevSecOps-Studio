@@ -72,7 +72,7 @@
     pip_package: python3-pip
     pip_executable: pip3
     pip_install_packages:
-      - name: virtualenv 
+      - name: virtualenv
       - name: ansible
         version: 2.9.6
       - name: ansible-lint

@@ -5,12 +5,14 @@
   become: yes
 
   vars:
-    # Inspec
-    inspec_version = "4.18.104" 
 
-    # # host entries won't work in docker
-    # # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
-    add_host_entries: true
+    # host entries wont work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+
+    add_host_entries: "true"
+
+    # Inspec
+    inspec_version: "4.18.104"
 
     # Docker Community Edition
     docker_edition: 'ce'
