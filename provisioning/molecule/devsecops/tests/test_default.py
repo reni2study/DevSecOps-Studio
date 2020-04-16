@@ -33,14 +33,13 @@ def test_directory_is_present(host, directory):
 @pytest.mark.parametrize('file', [
   '/etc/hosts',
   '/home/vagrant/.ssh/id_rsa',
-  '/usr/bin/pip',
+  '/usr/bin/pip3',
   '/usr/bin/docker',
   '/usr/local/bin/packer',
   '/usr/local/bin/terraform',
   '/usr/local/bin/ansible',
   '/usr/local/bin/ansible-lint',
   '/usr/local/bin/docker-compose',
-  '/usr/local/rvm/rubies/ruby-2.6.5/bin/ruby'
 ])
 def test_binary_is_present(host, file):
     file = host.file(file)
@@ -80,6 +79,7 @@ def test_files(host, file, content):
 
 @pytest.mark.parametrize('command, regex', [
   ("packer --version", "^1.5.5*"),
+  ("terraform --version", "Terraform v0.12.24*"),
   ("sudo su -c 'inspec --version' -l vagrant", "^4.18.104*")
 ])
 def test_commands(host, command, regex):

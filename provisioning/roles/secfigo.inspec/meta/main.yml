@@ -13,7 +13,7 @@ galaxy_info:
       versions:
       - all
   galaxy_tags:
-    - security 
+    - security
     - compliance
     - inspec
-    - chef 
+    - chef
