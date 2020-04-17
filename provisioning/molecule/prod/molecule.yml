@@ -31,6 +31,7 @@ provisioner:
         - roles/rvm.ruby/tasks/rvm.yml
       x: 
         - 204
+        - 306 
 scenario:
   name: prod
 verifier:
