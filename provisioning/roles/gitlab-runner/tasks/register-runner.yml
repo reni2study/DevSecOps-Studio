@@ -40,8 +40,8 @@
 
 - name: Register gitlab shell runner
   command: bash "/tmp/{{ gitlab_runner_shell_register_script }}"
-  when:  gitlab_runner_connect_enable and (configured_runners.stderr.find("=shell") == -1 )
+  when:  gitlab_runner_connect_enable and configured_runners.stderr.find("=shell") == -1
 
 - name: Register gitlab docker runner
   command: bash "/tmp/{{ gitlab_runner_docker_register_script }}"
-  when:  gitlab_runner_connect_enable and configured_runners.stderr.find("=docker") == -1 )
+  when:  gitlab_runner_connect_enable and configured_runners.stderr.find("=docker") == -1

@@ -15,3 +15,7 @@
     mode: 0644
   notify:
     - update cert index
+
+- name: Run update cert index again for confidence
+  command: /usr/sbin/update-ca-certificates
+  when: gitlab_runner_connect_enable
