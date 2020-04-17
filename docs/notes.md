@@ -1,8 +1,21 @@
 Adding new functionality
 =======================
-1. Add roles/functionality in usual places like roles and box.yml files
+1. Add roles/functionality in usual places like roles and machines.yml files
 2. Replicate the same in molecule tests under playbook.yml
 3. Write TDD tests to validate the ansible scripts
+
+
+Molecule Issues:
+===============
+
+- To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter under `playbook.yml`
+
+`ansible_python_interpreter: /usr/bin/python3`
+
+- Also host entries won't work in docker because of [https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts]()
+
+`add_host_entries: false`
+ 
 
 Jenkins Issues:
 ===============
@@ -24,7 +37,7 @@ Fix is to add the following to geerlingguy.jenkins role task
     password: "{{ admin.password }}"
 ```
 
-2. Plugin installation fails so added retries, see https://github.com/geerlingguy/ansible-role-jenkins/issues/169
+2. Plugin installation fails so added retries, see [https://github.com/geerlingguy/ansible-role-jenkins/issues/169]()
 so added following four lines to plugins.yml task  
 
 ```bash
@@ -39,7 +52,7 @@ so added following four lines to plugins.yml task
 
 Fix is to add the following task as disable-wizard.yml and call it from main.yml
 
-see https://github.com/geerlingguy/ansible-role-jenkins/issues/181
+see [https://github.com/geerlingguy/ansible-role-jenkins/issues/181]()
 
 ```bash
 - name: Fix a defect to disable setup wizard
@@ -77,7 +90,17 @@ Gitlab
         state: absent
 ```
 
+- For ubuntu 18.04, we need to install `gnupg2` [https://github.com/geerlingguy/ansible-role-gitlab/issues/145]()
+
+```bash
+- name: Install GitLab dependencies (Debian).
+  apt:
+    name: gnupg2
+    state: present
+  when: ansible_os_family == 'Debian'
+```
+
 DevSecOps-Box
 =============
 - Don't forget to add machine's host name in hosts_entry.yml once you a add new box.
-- Ensure host entries are working fine in VM, cant test hosts entries in docker because of its nature see - https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+- Ensure host entries are working fine in VM, cant test hosts entries in docker because of its nature see - [https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts]()
