@@ -75,6 +75,7 @@ Gitlab
 - For molecule tests you need to use the following configs apart from usual provisioning/gitlab.yml
 
 ```bash
+
   vars:
     gitlab_restart_handler_failed_when: false
 
@@ -88,19 +89,29 @@ Gitlab
       file:
         path: /.dockerenv
         state: absent
+        
 ```
 
 - For ubuntu 18.04, we need to install `gnupg2` [https://github.com/geerlingguy/ansible-role-gitlab/issues/145]()
 
 ```bash
+
 - name: Install GitLab dependencies (Debian).
   apt:
     name: gnupg2
     state: present
   when: ansible_os_family == 'Debian'
+  
 ```
 
 DevSecOps-Box
 =============
 - Don't forget to add machine's host name in hosts_entry.yml once you a add new box.
 - Ensure host entries are working fine in VM, cant test hosts entries in docker because of its nature see - [https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts]()
+
+
+Linting Issues
+=============
+
+- Skipping 204 line too long for sake of sanity
+- Skipping 306 test as it doesn't apply to Debian - [https://github.com/geerlingguy/ansible-role-docker/issues/191]()

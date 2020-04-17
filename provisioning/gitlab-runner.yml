@@ -53,6 +53,7 @@
     - geerlingguy.pip
     - geerlingguy.packer
     - secfigo.terraform
+    - python
     - cli-tools
   tags:
     - runner
