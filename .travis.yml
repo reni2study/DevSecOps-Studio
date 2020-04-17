@@ -47,3 +47,5 @@ matrix:
   allow_failures:
     - env: MOLECULE_DISTRO=ubuntu1804 test=gitlab
     - env: MOLECULE_DISTRO=debian9 test=gitlab
+    - env: MOLECULE_DISTRO=ubuntu1804 test=jenkins
+    - env: MOLECULE_DISTRO=ubuntu1804 test=elk
