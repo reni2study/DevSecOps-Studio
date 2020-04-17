@@ -4,13 +4,12 @@
   become: yes
 
   vars:
-    oracle_java_version: 8
+    # To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"
 
-    #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.3.1'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
+    ansible_python_interpreter: /usr/bin/python3
+
+    java_packages:
+      - java-1.8.0-openjdk
 
     #Jenkins
     jenkins_admin_username: vagrant
@@ -40,8 +39,6 @@
 
   roles:
     - common # need curl for rvm_io.ruby
-    - rvm.ruby
-    - secfigo.gauntlt
     - geerlingguy.docker
     - geerlingguy.java
     - geerlingguy.jenkins
@@ -50,4 +47,5 @@
     - cli-tools
     - geerlingguy.packer
     - secfigo.terraform
+    - secfigo.inspec
     # - selenium

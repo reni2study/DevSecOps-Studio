@@ -10,12 +10,13 @@ lint:
     config-file: resources/.yamllint
 platforms:
   - name: instance
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1604}-ansible:latest"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
+    hostname: "gitlab.local"
 provisioner:
   name: ansible
   playbooks:
@@ -28,7 +29,9 @@ provisioner:
     enabled: True
     options:
       exclude:
-        - roles/rvm.ruby/tasks/rvm.yml
+        - roles/geerlingguy.docker/tasks/setup-Debian.yml
+      x: 
+        - 204
 scenario:
   name: devsecops
   test_sequence:
