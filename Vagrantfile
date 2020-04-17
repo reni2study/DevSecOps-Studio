@@ -55,7 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end # end of machines loop
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get install -y avahi-daemon libnss-mdns
+    DEBIAN_FRONTEND=noninteractive apt-get install -y avahi-daemon libnss-mdns
   SHELL
 
 end # end of config
