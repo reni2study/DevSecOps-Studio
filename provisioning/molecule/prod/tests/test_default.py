@@ -38,7 +38,7 @@ def test_directory_is_present(host, directory):
 
 @pytest.mark.parametrize('file', [
   '/etc/hosts',
-  '/usr//bin/docker',
+  '/usr/bin/docker',
   '/usr/local/bin/docker-compose',
   '/home/deploy_user/.ssh/id_rsa',
   '/home/deploy_user/.ssh/authorized_keys',

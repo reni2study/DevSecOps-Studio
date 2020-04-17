@@ -12,6 +12,14 @@ On RedHat/CentOS, you may need to have EPEL installed before running this role. 
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
+    pip_package: python-pip
+
+The name of the packge to install to get `pip` on the system. You can set to `python3-pip`, for example, when using Python 3 on Ubuntu.
+
+    pip_executable: pip
+
+The role will try to autodetect the pip executable based on the `pip_package` (e.g. `pip` for Python 2 and `pip3` for Python 3). You can also override this explicitly, e.g. `pip_executable: pip3.6`.
+
     pip_install_packages: []
 
 A list of packages to install with pip. Examples below:
@@ -38,6 +46,10 @@ A list of packages to install with pip. Examples below:
       # Or force a reinstall.
       - name: docker
         state: forcereinstall
+    
+      # Or install a package in a particular virtualenv.
+      - name: docker
+        virtualenv: /my_app/venv
 
 ## Dependencies
 
@@ -46,6 +58,12 @@ None.
 ## Example Playbook
 
     - hosts: all
+    
+      vars:
+        pip_install_packages:
+          - name: docker
+          - name: awscli
+    
       roles:
         - geerlingguy.pip
 

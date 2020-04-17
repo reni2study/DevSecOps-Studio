@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   machines.each do |machine|
     config.vm.define machine["name"] do |box|
       box.vm.box = machine["box"]
+      box.vm.box_version = machine["box_version"]
       box.vm.hostname = machine["name"]
       box.vm.network "private_network", ip: machine["ip"]
 
@@ -34,6 +35,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if machine["ansible"] != nil
         box.vm.provision "ansible" do |ansible|
             ansible.playbook = machine["ansible"] 
+            ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+            ansible.verbose = "vv"
         end
       end
 

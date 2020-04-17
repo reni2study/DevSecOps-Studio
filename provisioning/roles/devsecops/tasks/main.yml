@@ -1,13 +1,5 @@
 ---
 
-- name: Install awscli, awsebcli, ansible, ansible-lint
-  pip:
-    name:
-      - awscli
-      - awsebcli
-      - ansible
-      - ansible-lint
-
 - name: Install tree package
   apt:
     name: tree

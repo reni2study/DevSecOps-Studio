@@ -7,11 +7,3 @@
       - nmap
       - sqlmap
     state: present
-
-- name: Install tools via pip
-  pip:
-    name:
-      - sslyze
-      - ansible
-      - ansible-lint
-    state: present
