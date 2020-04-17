@@ -29,6 +29,8 @@ provisioner:
     options:
       exclude:
         - roles/rvm.ruby/tasks/rvm.yml
+      x: 
+        - 204
 scenario:
   name: prod
 verifier:
