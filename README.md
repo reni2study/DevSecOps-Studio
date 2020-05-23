@@ -152,7 +152,7 @@ pip install ansible
 ### Windows (optional)
 
 Easiest solution for windows user is to use DevSecOps Studio Virtualbox Appliance
-1. Download DevSecOps-Studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
+1. Download DevSecOps-Studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG) - NOT MAINTAINED.
 
 2. Import the above Appliance by following [these step](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html)
 
