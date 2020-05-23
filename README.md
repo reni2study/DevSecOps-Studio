@@ -40,7 +40,7 @@ Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https:
 
 ```bash
 # Download the code
-$ git clone https://github.com/teacheraio/DevSecOps-Studio.git && cd DevSecOps-Studio
+$ git clone https://github.com/hysnsec/DevSecOps-Studio.git && cd DevSecOps-Studio
 
 # Download the ansible dependency roles
 $ ansible-galaxy install -r requirements.yml -p provisioning/roles
@@ -55,7 +55,7 @@ Go grab some coffee while DevSecOps Studio does its job.
 Yes, that's it, you just setup entire DevSecOps environment with three commands :)
 
 
-Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/hysnsec/DevSecOps-Studio/wiki)
 
 ### Installation video
 [![asciicast](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa.svg)](https://asciinema.org/a/LGCa3te9yXhVLDCRpL2TtxzHa)
@@ -115,7 +115,7 @@ brew install ansible
 Curl Installlation(require root privileges to install tools)
 
 ``` bash
-curl -O https://raw.githubusercontent.com/teacheraio/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+curl -O https://raw.githubusercontent.com/hysnsec/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
 ```
 
 or 
@@ -141,7 +141,7 @@ VAGRANT_VERSION=2.2.1
 wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
 
-sudo apt-get install python2 python2-pip
+sudo apt-get install python3 python3-pip
 ```
 [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
@@ -174,7 +174,7 @@ Install ansible via pip
 > Installation on windows for ansible is not straight forward, please follow [these instructions](https://www.jeffgeerling.com/blog/running-ansible-within-windows) to install cygwin and then install ansible
 
 ```bash
-choco install python2 -y #Installs python 2.7.x, includes pip under scripts folder of python27
+choco install python3 -y #Installs python 3, includes pip under scripts folder of python3x
 pip install ansible
 ```
 
@@ -183,7 +183,7 @@ pip install ansible
 1. Clone this repo or download the zip
 
 	```bash
-	$ git clone https://github.com/teacheraio/DevSecOps-Studio.git
+	$ git clone https://github.com/hysnsec/DevSecOps-Studio.git
 	```
 
 1. CD into the directory and check what boxes are available.
@@ -201,7 +201,7 @@ pip install ansible
 	```bash
 	vagrant up
 	```
-You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/hysnsec/DevSecOps-Studio/wiki)
 
 ## How to use the setup
 
@@ -219,7 +219,7 @@ Dynamic Analysis Tools: | ZAP proxy, Gaunlt
 Hardening: | DevSec Ansible OS Hardening
 Compliance: | Inspec
 Operating System :| Ubuntu Xenial (16.04)
-Programming Languages: | Java, Python 2, Python 3, Ruby/Rails
+Programming Languages: | Java, Python 3, Ruby/Rails
 Container Technology:| Docker
 Source Code Management:| Gitlab (github like system)
 CI Server:| Gitlab CI/Jenkins
